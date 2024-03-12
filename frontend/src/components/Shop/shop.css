@@ -1,0 +1,32 @@
+.shop {
+  display: flex;
+}
+
+.sidebar {
+  margin: 1% 1%;
+  width: 25%;
+  height: 89vh;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.section {
+  margin: 1% 1%;
+  width: 72%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  max-height: 89vh;
+  overflow-y: auto;
+}
+
+h4 {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.shop > .sidebar > button {
+  margin: 10px auto;
+  display: block;
+  border-radius: 5px;
+  font-size: 18px;
+}

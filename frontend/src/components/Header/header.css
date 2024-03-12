@@ -1,0 +1,20 @@
+li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.course-nav {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.course-nav > li:nth-child(2n):before {
+  content: '|';
+  font-size: 28px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+a:hover {
+  text-decoration: underline;
+}

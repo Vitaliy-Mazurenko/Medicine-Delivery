@@ -1,0 +1,54 @@
+.shopping {
+  display: flex;
+}
+
+.shopping > .sidebar {
+  margin: 1% 1%;
+  width: 25%;
+  height: 79vh;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.shopping > .section {
+  height: 79vh;
+}
+
+.form-cart{
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-cart > label {
+  margin: 0 auto;
+}
+
+label div{
+  padding: 25px 1px 5px;
+}
+.result {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 18px;
+}
+.total-price {
+  padding-top: 20px;
+  padding-right: 40px;
+}
+
+.result > button {
+  height: 40px;
+  margin: 12px;
+  border-radius: 7px;
+}
+
+.item-img {
+  width: 256px;
+  height: 256px;
+}
+
+
+
+
+
