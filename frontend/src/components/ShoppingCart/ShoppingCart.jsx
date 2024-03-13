@@ -1,11 +1,12 @@
 import Orders from './Orders';
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Input from '../../common/Input/Input';
 import Button from '../../common/Button/Button';
 import './shoppingCart.css';
 
 export default function ShoppingCart({ carts, amountChange, clearCart }) {
+	const formatCarts = JSON.stringify(carts);
 	const navigate = useNavigate();
 	const [newUser, setUserState] = useState({
 		name: '',
@@ -33,6 +34,16 @@ export default function ShoppingCart({ carts, amountChange, clearCart }) {
 		});
 	};
 
+	const orderFetch = async (cartResult, URL = 'http://localhost:4000/order') => {
+		return await fetch(`${URL}`, {
+			method: 'POST',
+			body: JSON.stringify(cartResult),
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		});
+	};
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (!result) {
@@ -45,8 +56,12 @@ export default function ShoppingCart({ carts, amountChange, clearCart }) {
 		) {
 			alert('Please, fill in all fields');
 		} else {
-			let cartResult = { ...newUser, ...carts };
+			let cartResult = {
+				"items" : formatCarts,
+				"customer" : newUser
+			};
 			localStorage.setItem('cart', JSON.stringify(cartResult));
+			orderFetch(cartResult);
 			clearCart();
 			alert('Thank you for shopping');
 			navigate('/');

@@ -17,3 +17,9 @@ input:focus {
 .myInput::placeholder {
   padding-left: 7px;
 }
+
+@media (max-width: 800px) { 
+  .myInput {
+    width: 150px;
+  }
+}
