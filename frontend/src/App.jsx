@@ -1,18 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Shop from './components/Shop/Shop';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
-import { shopCarts } from './data';
-
-const newInitialCart = {
-	shops: shopCarts,
-	goods: [],
-	oneShop: '',
-};
 
 function App() {
+	const [shopCarts, setShopCarts] = useState([]);
+
+	const newInitialCart = useCallback((shopCarts) => {
+		return  {
+			shops: shopCarts,
+			goods: [],
+			oneShop: '',
+		};
+	},[]);
+ 
+	useEffect(() => {
+		fetch('http://localhost:4000/api/')
+		.then((res) => res.json())
+		.then((result) => setShopCarts(result.data));
+	}, []);
+
+
 	const [cart, setCart] = useState(newInitialCart);
 	const { shops, goods, oneShop } = cart;
 	const [shop, setShop] = useState(shops);
@@ -50,9 +60,22 @@ function App() {
 	};
 
 	useEffect(() => {
-		let shopId = 'drugs';
-		setShop(shopCarts.filter((item) => shopId === item.shop));
-	}, []);
+		if (!newInitialCart.shops) {
+			setShopCarts(shopCarts);
+			setCart({
+				shops: shopCarts,
+				goods: [],
+				oneShop: '',
+			});
+			setShop(shops);
+		}
+	}, [shopCarts, newInitialCart, shops]);
+
+	// useEffect(() => {
+	// 	let shopId = 'drugs';
+	// 	setShop(shopCarts.filter((item) => shopId === item.shop));
+	// }, []);
+
 
 	return (
 		<div className='App'>

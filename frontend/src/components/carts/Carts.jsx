@@ -1,14 +1,14 @@
 import Cart from './Cart';
 
 const Carts = ({ carts, addGoods }) => {
-	let shopsCarts = carts.map((item) => {
-		return <Cart item={item} key={item.id} addGoods={addGoods} />;
-	});
 	return (
-		<div>
-			<ul>{shopsCarts}</ul>
-		</div>
+		<ul>
+		{(!!carts && typeof carts[0] !== 'undefined') && carts.map((item) =>
+			<Cart item={item} key={item.id} addGoods={addGoods} />
+		)}
+	</ul>
 	);
+
 };
 
 export default Carts;

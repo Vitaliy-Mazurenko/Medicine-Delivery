@@ -1,0 +1,98 @@
+[
+	{
+		"id": 1,
+		"title": "Paracetamol",
+		"im": "./i/im1.jpg",
+		"amount": 1,
+		"price": 38,
+		"shop": "drugs"
+	},
+	{
+		"id": 2,
+		"title": "Askofen",
+		"im": "./i/im2.jpg",
+		"amount": 1,
+		"price": 8,
+		"shop": "drugs"
+	},
+	{
+		"id": 3,
+		"title": "Strepsils",
+		"im": "./i/im3.jpg",
+		"amount": 1,
+		"price": 110,
+		"shop": "drugs"
+	},
+	{
+		"id": 4,
+		"title": "Imu Lor",
+		"im": "/i/im4.jpg",
+		"amount": 1,
+		"price": 70,
+		"shop": "farmacy"
+	},
+	{
+		"id": 5,
+		"title": "Tantivert",
+		"im": "/i/im5.jpg",
+		"price": 86,
+		"amount": 1,
+		"shop": "farmacy"
+	},
+	{
+		"id": 6,
+		"title": "Ibuprofen",
+		"im": "./i/im6.jpg",
+		"amount": 1,
+		"price": 68,
+		"shop": "abc"
+	},
+	{
+		"id": 7,
+		"title": "Tantum Verde",
+		"im": "./i/im7.jpg",
+		"amount": 1,
+		"price": 224,
+		"shop": "farmacy"
+	},
+	{
+		"id": 8,
+		"title": "Paracetamol Baby",
+		"im": "./i/im8.jpg",
+		"amount": 1,
+		"price": 33,
+		"shop": "abc"
+	},
+	{
+		"id": 9,
+		"title": "Strepsils",
+		"im": "./i/im3.jpg",
+		"amount": 1,
+		"price": 110,
+		"shop": "farmacy"
+	},
+	{
+		"id": 10,
+		"title": "Imu Lor",
+		"im": "/i/im4.jpg",
+		"amount": 1,
+		"price": 70,
+		"shop": "drugs"
+	},
+	{
+		"id": 11,
+		"title": "Askofen",
+		"im": "./i/im2.jpg",
+		"amount": 1,
+		"price": 8,
+		"shop": "abc"
+	},
+	{
+		"id": 12,
+		"title": "Nurofjen",
+		"im": "./i/im9.jpg",
+		"amount": 1,
+		"price": 188,
+		"shop": "farmacy"
+	}
+]

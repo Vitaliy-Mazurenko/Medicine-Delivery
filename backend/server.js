@@ -1,10 +1,22 @@
 const express = require('express');
 const app = express();
-const port = 4000;
+const dataBase = require('./data.json');
+const PORT = process.env.PORT || 4000;
 
-require('./routes')(app);
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+  });
 
-app.listen(port, () =>{
-    console.log('work on ' +port);
+  app.get('/', (req, res)=> {
+    res.end('Server listening on 4000');
+  });
+
+  app.get('/api', (req, res)=> {
+    res.json({ data: dataBase });
+  });
+
+app.listen(PORT, () =>{
+    console.log('work on ' +PORT);
 
 });
