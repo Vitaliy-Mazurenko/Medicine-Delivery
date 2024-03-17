@@ -6,7 +6,6 @@ import Button from '../../common/Button/Button';
 import './shoppingCart.css';
 
 export default function ShoppingCart({ carts, amountChange, clearCart }) {
-	const formatCarts = JSON.stringify(carts);
 	const navigate = useNavigate();
 	const [newUser, setUserState] = useState({
 		name: '',
@@ -39,8 +38,12 @@ export default function ShoppingCart({ carts, amountChange, clearCart }) {
 			method: 'POST',
 			body: JSON.stringify(cartResult),
 			headers: {
+				'Accept': 'application/json',
 				'Content-Type': 'application/json',
 			},
+		})
+		.catch((error) => {
+		console.error('Error sending request:', error);
 		});
 	};
 
@@ -57,7 +60,7 @@ export default function ShoppingCart({ carts, amountChange, clearCart }) {
 			alert('Please, fill in all fields');
 		} else {
 			let cartResult = {
-				"items" : formatCarts,
+				"items" : carts,
 				"customer" : newUser
 			};
 			localStorage.setItem('cart', JSON.stringify(cartResult));
